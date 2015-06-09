@@ -2,9 +2,17 @@
 
 [Ionicons](http://ionicons.com/) integration for Swift project.
 
+## Features
+
+- Includes all 732 of the icons in 2.0.1
+- Tiny API, just one `enum` type and two methods.
+- All icons are always balanced and squared.
+- Generate icons as `UIImage` or `UILabel`
+
+
 ## Installation
 
-[Carthage](https://github.com/Carthage/Carthage): Add `github tidwall/IonIconsSwift` to your `Cartfile`.
+[Carthage](https://github.com/Carthage/Carthage): Add `github tidwall/IoniconsSwift` to your `Cartfile`.
 
 ## Example
 ```swift
