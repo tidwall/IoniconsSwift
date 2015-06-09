@@ -46,7 +46,16 @@ func (data Data) SwiftSource() string {
 		"		label.frame = CGRectMake(0, 0, size, size)\n" +
 		"		label.accessibilityElementsHidden = true\n" +
 		"		return label\n" +
-		"	}\n"
+		"	}\n" +
+		"	public func image(size: CGFloat, color: UIColor = UIColor.blackColor()) -> UIImage {\n" +
+		"	    let label = self.label(size, color: color)\n" +
+		"	    UIGraphicsBeginImageContextWithOptions(label.bounds.size, true, 0)\n" +
+		"	    label.drawViewHierarchyInRect(label.bounds, afterScreenUpdates: true)\n" +
+		"	    let image = UIGraphicsGetImageFromCurrentImageContext()\n" +
+		"	    UIGraphicsEndImageContext();\n" +
+		"	    return image\n" +
+		"	}\n" +
+		"	case None = \"\"\n"
 	for _, icon := range data.Icons {
 		var parts = strings.Split(icon.Name, "-")
 		for i := range parts {

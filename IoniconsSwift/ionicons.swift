@@ -23,6 +23,15 @@ public enum Ionicons : String {
 		label.accessibilityElementsHidden = true
 		return label
 	}
+	public func image(size: CGFloat, color: UIColor = UIColor.blackColor()) -> UIImage {
+	    let label = self.label(size, color: color)
+	    UIGraphicsBeginImageContextWithOptions(label.bounds.size, true, 0)
+	    label.drawViewHierarchyInRect(label.bounds, afterScreenUpdates: true)
+	    let image = UIGraphicsGetImageFromCurrentImageContext()
+	    UIGraphicsEndImageContext();
+	    return image
+	}
+	case None = ""
 	case Alert = "\u{f101}"
 	case AlertCircled = "\u{f100}"
 	case AndroidAdd = "\u{f2c7}"
