@@ -11,8 +11,24 @@
 */
 import UIKit
 
+private var loaded = false
+private func load(){
+	if loaded {
+		return
+	}
+	loaded = true
+	let inData = NSData(contentsOfFile: NSBundle(identifier: "com.oncast.IoniconsSwift")!.pathForResource("ionicons", ofType: "ttf")!)
+	var error : Unmanaged<CFError>?
+	let provider = CGDataProviderCreateWithCFData(inData)
+	let font = CGFontCreateWithDataProvider(provider)
+	if !CTFontManagerRegisterGraphicsFont(font, &error) {
+		let errorDescription = CFErrorCopyDescription(error!.takeRetainedValue())
+		NSLog("Failed to load font: %@", errorDescription as! String);
+	}
+}
 public enum Ionicons : String {
 	public func label(size: CGFloat, color: UIColor = UIColor.blackColor()) -> UILabel {
+		load()
 		let label = UILabel()
 		label.font = UIFont(name: "ionicons", size: size)
 		label.text = rawValue
@@ -24,12 +40,12 @@ public enum Ionicons : String {
 		return label
 	}
 	public func image(size: CGFloat, color: UIColor = UIColor.blackColor()) -> UIImage {
-	    let label = self.label(size, color: color)
-	    UIGraphicsBeginImageContextWithOptions(label.bounds.size, true, 0)
-	    label.drawViewHierarchyInRect(label.bounds, afterScreenUpdates: true)
-	    let image = UIGraphicsGetImageFromCurrentImageContext()
-	    UIGraphicsEndImageContext();
-	    return image
+		let label = self.label(size, color: color)
+		UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0)
+		label.drawViewHierarchyInRect(label.bounds, afterScreenUpdates: true)
+		let image = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext();
+		return image
 	}
 	case None = ""
 	case Alert = "\u{f101}"
