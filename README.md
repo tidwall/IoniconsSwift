@@ -1,6 +1,6 @@
 # IoniconsSwift
 
-[Ionicons](http://ionicons.com/) integration for Swift project.
+[Ionicons](http://ionicons.com/) integration for Swift and iOS.
 
 ## Features
 
