@@ -41,8 +41,8 @@ public enum Ionicons : String {
 	}
 	public func image(size: CGFloat, color: UIColor = UIColor.blackColor()) -> UIImage {
 		let label = self.label(size, color: color)
-		UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0)
-		label.drawViewHierarchyInRect(label.bounds, afterScreenUpdates: true)
+		UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, UIScreen.mainScreen().scale)
+        label.layer.renderInContext(UIGraphicsGetCurrentContext())
 		let image = UIGraphicsGetImageFromCurrentImageContext()
 		UIGraphicsEndImageContext();
 		return image
