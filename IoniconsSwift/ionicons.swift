@@ -23,7 +23,7 @@ private func load(){
 	let font = CGFontCreateWithDataProvider(provider)
 	if !CTFontManagerRegisterGraphicsFont(font, &error) {
 		let errorDescription = CFErrorCopyDescription(error!.takeRetainedValue())
-		NSLog("Failed to load font: %@", errorDescription as! String);
+		NSLog("Failed to load font: %@", errorDescription as String);
 	}
 }
 public enum Ionicons : String {
