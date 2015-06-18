@@ -2,9 +2,12 @@
 
 [Ionicons](http://ionicons.com/) integration for Swift and iOS.
 
+**Built for Swift 2.0** - For Swift 1.2 support use 2.0.1 or earlier.
+
+
 ## Features
 
-- Includes all 732 of the icons in 2.0.1
+- Includes all *732* icons.
 - Tiny API, just one `enum` type and two methods.
 - All icons are always balanced and squared.
 - Generate icons as `UIImage` or `UILabel`
