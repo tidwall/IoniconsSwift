@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary = 'Ionicons for Swift and iOS'
   s.authors = { 'Josh Baker' => 'oshbaker77@gmail.com', 'Christophe de BORTOLI' => 'christophe.debortoli@gmail.com' }
   s.homepage = 'http://github.com/cdebortoli/IoniconsSwift'
-  s.source = { :git => 'http://github.com/cdebortoli/IoniconsSwift', :tag => '2.0.1' }
+  s.source = { :git => 'http://github.com/cdebortoli/IoniconsSwift', :branch => 'cocoapods' }
 
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.9'
