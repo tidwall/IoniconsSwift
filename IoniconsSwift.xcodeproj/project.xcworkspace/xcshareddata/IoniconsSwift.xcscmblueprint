@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "AE09A2C4CF5F0BABE1D0B420C65AA5742B3F7E36",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AE09A2C4CF5F0BABE1D0B420C65AA5742B3F7E36" : 0,
+    "3298BBC15CA3EA0F7D15CF3C09DAC497B57F4AC3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C8B5E9BF-8ED7-4D7D-A7EF-2344507490D6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AE09A2C4CF5F0BABE1D0B420C65AA5742B3F7E36" : "IoniconsSwift\/",
+    "3298BBC15CA3EA0F7D15CF3C09DAC497B57F4AC3" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "IoniconsSwift",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "IoniconsSwift.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/oncastdev\/oncast-ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3298BBC15CA3EA0F7D15CF3C09DAC497B57F4AC3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tidwall\/IoniconsSwift",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AE09A2C4CF5F0BABE1D0B420C65AA5742B3F7E36"
+    }
+  ]
+}
