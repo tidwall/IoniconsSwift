@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031476131B39B59900698F67 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03DB26261B27597000F9F073 /* ionicons.ttf */; };
 		03DB260F1B27577700F9F073 /* IoniconsSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 03DB260E1B27577700F9F073 /* IoniconsSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03DB26271B27597000F9F073 /* ionicons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB26251B27597000F9F073 /* ionicons.swift */; };
-		03DB26281B27597000F9F073 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03DB26261B27597000F9F073 /* ionicons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,7 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DB26281B27597000F9F073 /* ionicons.ttf in Resources */,
+				031476131B39B59900698F67 /* ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
