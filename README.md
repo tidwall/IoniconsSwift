@@ -16,7 +16,7 @@
 ## Installation
 
 [Carthage](https://github.com/Carthage/Carthage): Add `github tidwall/IoniconsSwift` to your `Cartfile`.  
-[Cocoapods](https://cocoapods.org): Add `pod 'IoniconsSwift', :git => 'http://github.com/cdebortoli/IoniconsSwift.git', :branch => 'cocoapods'` to your `Podfile`.
+[CocoaPods](https://cocoapods.org): Add `pod 'IoniconsSwift', :git => 'http://github.com/cdebortoli/IoniconsSwift.git', :branch => 'cocoapods'` to your `Podfile`.
 
 
 ## Example
