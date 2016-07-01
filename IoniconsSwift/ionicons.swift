@@ -17,7 +17,7 @@ private func load(){
 		return
 	}
 	loaded = true
-    let inData = NSData(contentsOfFile: NSBundle(identifier: "org.cocoapods.IoniconsSwift")!.pathForResource("ionicons", ofType: "ttf")!)
+    let inData = NSData(contentsOfFile: NSBundle(identifier: "com.oncast.IoniconsSwift")!.pathForResource("ionicons", ofType: "ttf")!)
 	var error : Unmanaged<CFError>?
 	let provider = CGDataProviderCreateWithCFData(inData)
 	let font = CGFontCreateWithDataProvider(provider)
