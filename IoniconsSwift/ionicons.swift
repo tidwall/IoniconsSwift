@@ -9,7 +9,30 @@
 *
 * The Ionicons TTF font file was originated from http://ionicons.com/
 */
-import UIKit
+#if os(iOS) || os(tvOS)
+    import UIKit
+#elseif os(OSX)
+    import Cocoa
+    public typealias UIColor = NSColor
+    public typealias UIImage = NSImage
+    public typealias UILabel = NSTextField
+    public typealias UIFont = NSFont
+    public typealias UIScreen = NSScreen
+    extension UILabel {
+        var text:String {
+            get { return self.stringValue }
+            set { self.stringValue = newValue }
+        }
+        var textAlignment:NSTextAlignment {
+            get { return self.alignment }
+            set { self.alignment = newValue }
+        }
+        var accessibilityElementsHidden:Bool {
+            get { return self.isAccessibilityHidden() }
+            set { self.setAccessibilityHidden(newValue) }
+        }
+    }
+#endif
 
 private var loaded = false
 private func load(){
@@ -23,7 +46,7 @@ private func load(){
 	let font = CGFontCreateWithDataProvider(provider)
 	if !CTFontManagerRegisterGraphicsFont(font!, &error) {
 		let errorDescription = CFErrorCopyDescription(error!.takeRetainedValue())
-		NSLog("Failed to load font: %@", errorDescription as String);
+		print("Failed to load font: \(errorDescription as String)")
 	}
 }
 public enum Ionicons : UInt16, CustomStringConvertible {
@@ -40,12 +63,27 @@ public enum Ionicons : UInt16, CustomStringConvertible {
 		return label
 	}
 	public func image(size: CGFloat, color: UIColor = UIColor.blackColor()) -> UIImage {
-		let label = self.label(size, color: color)
-		UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, UIScreen.mainScreen().scale)
-		label.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-		let image = UIGraphicsGetImageFromCurrentImageContext()
-		UIGraphicsEndImageContext();
-		return image
+        load()
+        let imageSize = CGSizeMake(size, size)
+        #if os(iOS) || os(tvOS)
+            let scale = UIScreen.mainScreen().scale
+            UIGraphicsBeginImageContextWithOptions(imageSize, false, scale)
+        #elseif os(OSX)
+            let image = NSImage(size:imageSize)
+            image.lockFocus()
+        #endif
+        description.drawInRect(CGRectMake(0, 0, size, size), withAttributes: [
+            NSFontAttributeName: UIFont(name: "ionicons", size: size)!,
+            NSForegroundColorAttributeName: color,
+            NSBackgroundColorAttributeName: UIColor.clearColor()
+            ])
+        #if os(iOS) || os(tvOS)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+        #elseif os(OSX)
+            image.unlockFocus()
+        #endif
+        return image
 	}
     public var description : String {
         return String(UnicodeScalar(rawValue))

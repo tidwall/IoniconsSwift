@@ -10,6 +10,8 @@ Pod::Spec.new do |s|
   s.ios.platform          = :ios, '8.0'
   s.ios.deployment_target = '8.0'
   s.ios.framework         = 'UIKit'
+  s.osx.deployment_target = '10.10'
+  s.tvos.deployment_target = '9.0'
   s.source_files          = 'IoniconsSwift/*.swift'
   s.resources             = ['IoniconsSwift/*.ttf']
   s.requires_arc          = true
