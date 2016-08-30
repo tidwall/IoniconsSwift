@@ -48,7 +48,7 @@ public enum Ionicons : UInt16, CustomStringConvertible {
 		return image!
 	}
     public var description : String {
-        return String(describing: UnicodeScalar(rawValue))
+        return String(describing: UnicodeScalar(rawValue)!)
     }
 
 	case none = 0x0
