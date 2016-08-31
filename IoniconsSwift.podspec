@@ -7,7 +7,6 @@ Pod::Spec.new do |s|
   s.source                = { :git => 'https://github.com/zzycami/IoniconsSwift.git', :tag => 'v2.1.2' }
   s.authors               = { 'Josh Baker' => 'joshbaker77@gmail.com' }
   s.social_media_url      = "https://twitter.com/tidwall"
-  s.ios.platform          = :ios, '8.0'
   s.ios.deployment_target = '8.0'
   s.ios.framework         = 'UIKit'
   s.source_files          = 'IoniconsSwift/*.swift'
