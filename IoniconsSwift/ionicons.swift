@@ -27,7 +27,7 @@ private func load(){
 	}
 }
 public enum Ionicons : UInt16, CustomStringConvertible {
-	public func getLabel(_ size: CGFloat, color: UIColor = UIColor.black) -> UILabel {
+    public func label(_ size: CGFloat, color: UIColor = UIColor.black) -> UILabel {
 		load()
 		let label = UILabel()
 		label.font = UIFont(name: "ionicons", size: size)
@@ -39,8 +39,8 @@ public enum Ionicons : UInt16, CustomStringConvertible {
 		label.accessibilityElementsHidden = true
 		return label
 	}
-	public func getImage(_ size: CGFloat, color: UIColor = UIColor.black) -> UIImage {
-		let label = self.getLabel(size, color: color)
+	public func image(_ size: CGFloat, color: UIColor = UIColor.black) -> UIImage {
+		let label = self.label(size, color: color)
 		UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, UIScreen.main.scale)
 		label.layer.render(in: UIGraphicsGetCurrentContext()!)
 		let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -302,7 +302,7 @@ public enum Ionicons : UInt16, CustomStringConvertible {
 	case helpCircled = 0xf142
 	case home = 0xf144
 	case icecream = 0xf27d
-	case image = 0xf147
+	case imageIcon = 0xf147
 	case images = 0xf148
 	case information = 0xf14a
 	case informationCircled = 0xf149

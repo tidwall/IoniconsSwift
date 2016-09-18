@@ -2,8 +2,7 @@
 
 [Ionicons](http://ionicons.com/) integration for Swift and iOS.
 
-**Built for Swift 2.0** - For Swift 1.2 support use 2.0.1 or earlier.
-
+**Built for Swift 3.0** - for older versions of swift please use the `swift\1.2` and `swift\2.0` branches.
 
 ## Features
 
@@ -24,12 +23,12 @@
 import IoniconsSwift
 
 // Square UIImage of an icon.
-let image = Ionicons.Alert.image(35)                                 
-let image = Ionicons.IosClock.image(35, color: UIColor.greenColor()) 
+let image = Ionicons.alert.image(35)                                 
+let image = Ionicons.iosClock.image(35, color: UIColor.greenColor()) 
 
 // Square UILabel
-let label = Ionicons.Alert.label(35)                                 
-let label = Ionicons.IosClock.label(35, color: UIColor.greenColor()) 
+let label = Ionicons.alert.label(35)                                 
+let label = Ionicons.iosClock.label(35, color: UIColor.greenColor()) 
 
 ```
 
