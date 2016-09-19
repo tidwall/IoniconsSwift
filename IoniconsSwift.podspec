@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = "IoniconsSwift"
-  s.version               = "2.1.2"
+  s.version               = "2.1.3"
   s.summary               = "Ionicons for Swift and iOS"
   s.homepage              = "https://github.com/tidwall/IoniconsSwift"
   s.license               = { :type => "MIT", :file => "LICENSE" }
