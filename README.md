@@ -2,7 +2,7 @@
 
 [Ionicons](http://ionicons.com/) integration for Swift and iOS.
 
-**Built for Swift 3.0** - for older versions of swift please use the `swift\1.2` and `swift\2.0` branches.
+**Built for Swift 4.0** - for older versions of swift please use the `swift\1.2`, `swift\2.0`, and `swift\3.0` branches.
 
 ## Features
 
