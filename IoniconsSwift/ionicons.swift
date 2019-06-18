@@ -19,11 +19,11 @@ private func load(){
 	loaded = true
     let inData = try? Data(contentsOf: URL(fileURLWithPath: Bundle(identifier: "org.cocoapods.IoniconsSwift")!.path(forResource: "ionicons", ofType: "ttf")!))
 	var error : Unmanaged<CFError>?
-	let provider = CGDataProvider(data: inData as! CFData)
+    let provider = CGDataProvider(data: inData! as CFData)
 	let font = CGFont(provider!)
-	if !CTFontManagerRegisterGraphicsFont(font, &error) {
+    if !CTFontManagerRegisterGraphicsFont(font!, &error) {
 		let errorDescription = CFErrorCopyDescription(error!.takeRetainedValue())
-		NSLog("Failed to load font: %@", errorDescription as! String);
+        NSLog("Failed to load font: %@", errorDescription! as String);
 	}
 }
 public enum Ionicons : UInt16, CustomStringConvertible {
