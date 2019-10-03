@@ -16,16 +16,21 @@ private func load(){
 	if loaded {
 		return
 	}
-	loaded = true
-	let inData = NSData(contentsOfFile: NSBundle(identifier: "com.oncast.IoniconsSwift")!.pathForResource("ionicons", ofType: "ttf")!)
-	var error : Unmanaged<CFError>?
-	let provider = CGDataProviderCreateWithCFData(inData)
-	let font = CGFontCreateWithDataProvider(provider)
-	if !CTFontManagerRegisterGraphicsFont(font, &error) {
-		let errorDescription = CFErrorCopyDescription(error!.takeRetainedValue())
-		NSLog("Failed to load font: %@", errorDescription as! String);
-	}
+    loaded = true
+    guard
+        let bundle = Bundle(identifier: "org.cocoapods.IoniconsSwift"),
+        let path = bundle.path(forResource: "ionicons", ofType: "ttf"),
+        let inData = try? Data(contentsOf: URL(fileURLWithPath: path)),
+        let provider = CGDataProvider(data: inData as CFData),
+        let font = CGFont(provider)
+    else { return }
+    var error : Unmanaged<CFError>?
+    if !CTFontManagerRegisterGraphicsFont(font, &error) {
+        let errorDescription = CFErrorCopyDescription(error!.takeRetainedValue()) as String?
+        print("Failed to load font: \(errorDescription ?? "unknown error")")
+    }
 }
+
 public enum Ionicons : String {
 	public func label(size: CGFloat, color: UIColor = UIColor.blackColor()) -> UILabel {
 		load()
